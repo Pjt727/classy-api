@@ -23,9 +23,9 @@
  * @typedef {'key' | 'string' | 'number' | 'boolean' | 'null' | 'mark'} JsonType
  */
 
-const github_origin = "https://pjt727.github.io"
-const window_name = window.location.origin == github_origin ? `${github_origin}/classy-api` : window.location.origin
-const routeLink = `${window.location.origin}?route=`
+const githubOrigin = "https://pjt727.github.io"
+const windowName = window.location.origin == githubOrigin ? `${githubOrigin}/classy-api` : window.location.origin
+const routeLink = `${windowName}?route=`
 
 const prettyPrintJson = {
     /**
