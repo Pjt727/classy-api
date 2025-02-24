@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classy</title>
+    <!-- <link rel="stylesheet" -->
+    <!--     href="https://cdn.jsdelivr.net/npm/pretty-print-json@3.0/dist/css/pretty-print-json.dark-mode.css"> -->
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="json-deps/pretty-print-json.dark-mode.css">
+</head>
+
+<body>
+    <main class="container">
+
+        <h1>Classy API</h1>
+        <div id="api-group">
+            <div id="domain-name">domain-name</div>
+            <input type="text" id="route" placeholder="api route">
+        </div>
+    </main>
+    <div id="output-group">
+        <pre id="output" class="json-container"></pre>
+    </div>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/pretty-print-json@3.0/dist/pretty-print-json.min.js"></script> -->
+    <script src="json-deps/json-beautify.js"></script>
+    <script src="json-deps/pretty-print-json.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
