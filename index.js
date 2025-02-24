@@ -1,6 +1,6 @@
 const DOMAIN_NAME = "http://localhost:3000/"
 const GITHUB_ORIGIN = "https://pjt727.github.io"
-const WINDOW_NAME = window.location.origin == GITHUB_ORIGIN ? `${GITHUB_ORIGIN}/classy-api/` : window.location.origin
+const WINDOW_NAME = window.location.origin == GITHUB_ORIGIN ? `${GITHUB_ORIGIN}/classy-api` : window.location.origin
 document.addEventListener("DOMContentLoaded", async () => {
     const searchParams = new URLSearchParams(window.location.search);
     let routeValue = searchParams.get("route")
@@ -68,23 +68,23 @@ function debounce(func, delay) {
 function inject_links(route, json_data) {
     if (/^[a-zA-Z0-9]+\/courses$/.test(route)) {
         json_data.forEach((course) => {
-            const newRoute = `${route}/${course.subject_code}/${course.number}`
-            course._course_link = `${WINDOW_NAME}/?route=${newRoute}`
+            const newRoute = `${route}${course.subject_code}/${course.number}`
+            course._course_link = `${WINDOW_NAME}?route=${newRoute}`
         })
     } else if (/^[a-zA-Z0-9]+\/[a-zA-Z0-9]+\/classes$/.test(route)) {
         const match = /^([a-zA-Z0-9]+)\/[a-zA-Z0-9]+\/classes/.exec(route);
         json_data.forEach((classEntry) => {
             const newRoute = `${match[1]}/courses/${classEntry.section.subject_code}/${classEntry.section.course_number}`
-            classEntry.section._course_link = `${WINDOW_NAME}/?route=${newRoute}`
+            classEntry.section._course_link = `${WINDOW_NAME}?route=${newRoute}`
         })
     } else if (/^[a-zA-Z0-9]+$/.test(route)) {
         json_data.forEach((term) => {
             const newRoute = `${route}/${term.id}/classes`
-            term._term_link = `${WINDOW_NAME}/?route=${newRoute}`
+            term._term_link = `${WINDOW_NAME}?route=${newRoute}`
         })
     } else if (route === "") {
         json_data.forEach((school) => {
-            school._school_link = `${WINDOW_NAME}/?route=${school.id}`
+            school._school_link = `${WINDOW_NAME}?route=${school.id}`
         })
     }
     return json_data
