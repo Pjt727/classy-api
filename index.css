@@ -1,4 +1,4 @@
-#api-group {
+.api-group {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,4 +85,26 @@ input[type="text"]::placeholder {
   justify-content: center;
   align-items: center;
   width: 100%;
+}
+
+#breadcrumbs {
+    margin-left: 12%;
+    padding-top: 10px;
+    border-radius: 5px;
+}
+
+#breadcrumbs a {
+    color: #eee;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+#breadcrumbs a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+#breadcrumbs span {
+    color: #ccc;
+    margin-right: 5px;
 }
