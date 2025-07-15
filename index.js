@@ -3,7 +3,7 @@ const API_ROOT = DOMAIN_NAME + "get/"
 
 const GITHUB_ORIGIN = "https://pjt727.github.io"
 const WINDOW_NAME = window.location.origin == GITHUB_ORIGIN ? `${GITHUB_ORIGIN}/classy-api` : window.location.origin
-const ROUTE_LINK = `${windowName}?route=`
+const ROUTE_LINK = `${WINDOW_NAME}?route=`
 document.addEventListener("DOMContentLoaded", async () => {
     const searchParams = new URLSearchParams(window.location.search);
     let routeValue = searchParams.get("route")
